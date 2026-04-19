@@ -2,17 +2,23 @@ name: Deploy to Second Org
 on:
   push:
     branches:
-      - main  # This triggers when you merge a PR into main
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout source code'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Critical: fetches all history so we can compare changes
 
       - name: 'Install Salesforce CLI'
         run: npm install @salesforce/cli --global
+
+      - name: 'Install sfdx-git-delta'
+        run: |
+          echo y | sfdx plugins:install sfdx-git-delta
 
       - name: 'Authenticate to Org'
         run: |
@@ -20,5 +26,17 @@ jobs:
           sf org login sfdx-url --sfdx-url-file auth_url.txt --set-default --alias targetOrg
           rm auth_url.txt
 
-      - name: 'Deploy Metadata'
-        run: sf project deploy start --target-org targetOrg
+      - name: 'Generate Delta (Changed Files Only)'
+        run: |
+          mkdir changed-sources
+          # This compares the current commit (HEAD) to the one before it (HEAD~1)
+          sfdx sgd:source:delta --to HEAD --from HEAD~1 --output changed-sources/ --generate-delta
+
+      - name: 'Deploy Delta Metadata'
+        run: |
+          # Only deploy if there are actual changes in the force-app folder
+          if [ -d "changed-sources/force-app" ]; then
+            sf project deploy start --source-dir changed-sources/force-app --target-org targetOrg
+          else
+            echo "No changes in force-app to deploy."
+          fi
