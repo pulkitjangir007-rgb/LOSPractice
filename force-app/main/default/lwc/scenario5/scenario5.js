@@ -10,7 +10,7 @@ return {input1};
 
 handleetod(){
 let{input1} = this.getvalues();
-this.result = Number(input1) * 1.1;
+this.result = Number(input1) * 2.2;
 }
 
 handleetod(){
