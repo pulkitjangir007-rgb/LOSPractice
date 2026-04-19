@@ -1,0 +1,15 @@
+<template>
+    <lightning-card variant="Narrow"  title="Subject Calculatios" icon-name="standard:employee">
+      <div class="slds-p-around_medium lgc-bg">
+        <lightning-input type="number" name="input1" label="Enter Subject 1 Marks" class="input1"></lightning-input>
+        <lightning-input type="number" name="input2" label="Enter Subject 2 Marks" class="input2"></lightning-input>
+        <lightning-input type="number" name="input3" label="Enter Subject 3 Marks" class="input3"></lightning-input>
+        <lightning-input type="number" label="Result" disabled value={result}></lightning-input>
+      </div>      
+    <span class="slds-m-around_medium">
+        <lightning-button variant="brand" label="Total Marks" onclick={totalmarks} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button variant="brand" label="Average Marks" onclick={average} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button variant="brand" label="Percentage" onclick={percentage} class="slds-m-left_x-small"></lightning-button>
+    </span>
+    </lightning-card>
+</template>

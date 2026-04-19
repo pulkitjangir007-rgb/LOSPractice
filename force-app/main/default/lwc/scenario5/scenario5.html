@@ -1,0 +1,14 @@
+<template>
+    <lightning-card variant="Narrow"  title="Currency Converter" icon-name="standard:account">
+        <div class="slds-p-around_medium lgc-bg">
+        <lightning-input type="number" name="input1" label="Enter Amount" step="0.01" class="input1"></lightning-input>
+</div>
+ <div class="slds-m-around_medium">
+    <lightning-input type="number" disabled value={result}></lightning-input>
+    </div>
+<div class="slds-p-around_medium lgc-bg">
+       <lightning-button variant="brand" label="Convert Eur to Dollar" title="Primary action" onclick={handleetod} class="slds-m-left_x-small"></lightning-button>
+       <lightning-button variant="brand" label="Convert Dollar to Eur" title="Primary action" onclick={handleetod} class="slds-m-left_x-small"></lightning-button>
+</div>
+    </lightning-card>
+</template>

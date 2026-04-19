@@ -1,0 +1,12 @@
+<template>
+    <lightning-card>
+    {test}!
+    <div if:false={ready}>Loading...</div>
+
+    <div if:true={ready}>
+    <div> Name:{name}</div>
+    <div>price:{price}</div>
+    <div if:true={rendered}>Component rendered succesfully</div>
+    </div>
+    </lightning-card>
+</template>

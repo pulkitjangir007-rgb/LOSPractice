@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title = "ApexWireMethodConnected" icon-name = "custom:custom63">
+        <div class="slds-m-around_medium">
+            <template lwc:if={Contacts}>
+                <template for:each={Contacts} for:item="Contact">
+                    <p key={Contact.Id}>{Contact.Name}</p>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

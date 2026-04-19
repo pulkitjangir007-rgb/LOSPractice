@@ -1,0 +1,19 @@
+<template>
+    <lightning-card variant="Narrow"  title="Billing To Mailing" icon-name="standard:address">
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+
+        <!-- Default/basic -->
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" label="Billing Address" onchange={handleClick} ></lightning-input>
+        </div>  
+
+        <!-- Default/basic -->
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" label="Mailing Address" value={mailingadd} ></lightning-input>        
+        </div>  
+     <lightning-button variant="brand" label="CopyBillingToMailing" onclick={handleBtnClick} class="slds-m-left_x-small"></lightning-button>
+    </div>
+
+    </lightning-card>
+    
+</template>

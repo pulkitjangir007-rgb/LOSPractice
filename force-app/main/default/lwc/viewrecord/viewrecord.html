@@ -1,0 +1,16 @@
+<template>
+    <lightning-card>
+<P>My Name is {fullName}</P>
+<P>Multiplication is {Multiply}</P>
+<lightning-button label="Click Me" onclick={handlechange}></lightning-button>
+<template lwc:if={sum}>
+<p>wowwww</p>
+</template>
+<template lwc:else>
+<p>Hurray</p>
+</template>
+<template for:each={Carlist} for:item='car'>
+<p key={car}>{car}</p>
+</template>
+    </lightning-card>
+</template>

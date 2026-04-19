@@ -1,0 +1,25 @@
+<template>
+    <lightning-card>
+        <lightning-input label="Item 1 Quantity"  value={item1Quantity} onchange={handleQuantity1Change}></lightning-input>
+        <lightning-input label="Item 1 Price"  value={item1Price} onchange={handlePrice1Change}></lightning-input>
+
+
+        <lightning-input label="Item 2 Quantity"  value={item2Quantity} onchange={handleQuantity2Change}></lightning-input>
+        <lightning-input label="Item 2 Price"  value={item2Price} onchange={handlePrice2Change}></lightning-input>
+
+
+        <lightning-input label="Item 3 Quantity"  value={item3Quantity} onchange={handleQuantity3Change}></lightning-input>
+        <lightning-input label="Item 3 Price"  value={item3Price} onchange={handlePrice3Change}></lightning-input>
+
+
+        <lightning-input label="Item 4 Quantity"  value={item4Quantity} onchange={handleQuantity4Change}></lightning-input>
+        <lightning-input label="Item 4 Price"  value={item4Price} onchange={handlePrice4Change}></lightning-input>
+
+
+        <lightning-input label="Item 5 Quantity" value={item5Quantity} onchange={handleQuantity5Change}></lightning-input>
+        <lightning-input label="Item 5 Price"  value={item5Price} onchange={handlePrice5Change}></lightning-input>
+ <lightning-button label="Calculate Bill" onclick={handletotalBill} variant="brand"></lightning-button>
+              <p><strong>Bill : {totalBill}</strong> </p>
+        <p><strong>Total Bill With 18% Tax : {totalBillTax}</strong> </p>
+    </lightning-card>
+</template>

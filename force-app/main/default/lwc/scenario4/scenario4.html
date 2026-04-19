@@ -1,0 +1,14 @@
+<template>
+    <lightning-card variant="Narrow"  title="Convert Feet into inches" icon-name="standard:event">
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input label="Enter Value" onchange={handlefeet}></lightning-input>
+        </div>
+         <div class="slds-p-around_medium lgc-bg">
+            <lightning-input label="Enter Value" value={inches}></lightning-input>
+        </div>
+         <div>
+           <lightning-button variant="brand" label="Convert Feet Into Inches" onclick={handleinches} class="slds-m-left_x-small"></lightning-button>
+         </div>
+        
+    </lightning-card>
+</template>

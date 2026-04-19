@@ -1,0 +1,90 @@
+<template>
+<lightning-card variant="Narrow"  title="Total Bill" icon-name="standard:employee">
+
+
+<div class="demo-only demo-only--sizing slds-grid slds-wrap">
+<div class="slds-size slds-small-size_1-of-2">
+    <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small"> 
+         <lightning-input type="number" name="Quantity" label="Salesforce" ></lightning-input>
+    </div>
+    </div>
+
+    <div class="slds-size slds-small-size_1-of-2">
+    <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
+    <lightning-input type="number" name="Price" label="Enter Price" ></lightning-input>
+    </div>
+
+</div>
+</div>
+
+<div class="demo-only demo-only--sizing slds-grid slds-wrap">
+<div class="slds-size slds-small-size_1-of-2">
+    <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small"> 
+         <lightning-input type="number" name="Quantity" label="Google" ></lightning-input>
+    </div>
+    </div>
+
+    <div class="slds-size slds-small-size_1-of-2">
+    <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
+    <lightning-input type="number" name="Price" label="Enter Price" ></lightning-input>
+    </div>
+
+</div>
+</div>
+
+<div class="demo-only demo-only--sizing slds-grid slds-wrap">
+<div class="slds-size slds-small-size_1-of-2">
+    <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small"> 
+         <lightning-input type="number" name="Quantity" label="Microsoft" ></lightning-input>
+    </div>
+    </div>
+
+    <div class="slds-size slds-small-size_1-of-2">
+    <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
+    <lightning-input type="number" name="Price" label="Enter Price" ></lightning-input>
+    </div>
+
+</div>
+</div>
+
+<div class="demo-only demo-only--sizing slds-grid slds-wrap">
+<div class="slds-size slds-small-size_1-of-2">
+    <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small"> 
+         <lightning-input type="number" name="Quantity" label="Nagaro" ></lightning-input>
+    </div>
+    </div>
+
+    <div class="slds-size slds-small-size_1-of-2">
+    <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
+    <lightning-input type="number" name="Price" label="Enter Price" ></lightning-input>
+    </div>
+
+</div>
+</div>
+
+<div class="demo-only demo-only--sizing slds-grid slds-wrap">
+<div class="slds-size slds-small-size_1-of-2">
+    <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small"> 
+         <lightning-input type="number" name="Quantity" label="Hike" ></lightning-input>
+    </div>
+    </div>
+
+    <div class="slds-size slds-small-size_1-of-2">
+    <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
+    <lightning-input type="number" name="Price" label="Enter Price" ></lightning-input>
+    </div>
+
+</div>
+</div>
+<div class="slds-p-around_medium lgc-bg">
+<lightning-input type="number" label="GST" disabled value="18%"></lightning-input>
+</div>
+<div class="slds-p-around_medium lgc-bg">
+<lightning-input type="number" label="Result" disabled value={result}></lightning-input>
+</div>
+<div class="slds-p-around_medium lgc-bg">
+<lightning-button variant="brand" label="Calculate Total Bill" onclick={totalbill}></lightning-button>
+</div>
+
+</lightning-card>
+</template>

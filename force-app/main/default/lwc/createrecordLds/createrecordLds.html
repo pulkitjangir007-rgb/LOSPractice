@@ -1,0 +1,57 @@
+<template>
+   <lightning-card title="Create Account Record" icon-name="standard:account">
+
+       <div style="margin-left: 6%" if:true={error}>
+           <lightning-badge label={error} style="color: red;"></lightning-badge>
+       </div>
+
+       <template if:true={accRecord}>
+           <div class="slds-m-around--xx-large">
+
+               <lightning-input 
+                   label="Enter Account Name"
+                   name="accName"
+                   required
+                   value={accRecord.Name}
+                   onchange={handleNameChange}>
+               </lightning-input>
+
+               <lightning-input 
+                   label="Enter Phone Number"
+                   name="accPhone"
+                   value={accRecord.Phone}
+                   onchange={handlePhoneChange}>
+               </lightning-input>
+
+               <!-- Dynamic Account Type -->
+               <lightning-combobox
+                   name="accountType"
+                   label="Select Account Type"
+                   value={accRecord.Type}
+                   options={typeOptions}
+                   placeholder="Select Type"
+                   onchange={handleTypeChange}>
+               </lightning-combobox>
+
+               <!-- Dynamic Industry -->
+               <lightning-combobox
+                   name="industry"
+                   label="Select Industry"
+                   value={accRecord.Industry}
+                   options={industryOptions}
+                   placeholder="Select Industry"
+                   onchange={handleIndustryChange}>
+               </lightning-combobox>
+
+               <br/>
+
+               <lightning-button 
+                   label="Submit"
+                   onclick={handleSave}
+                   variant="brand">
+               </lightning-button>
+
+           </div>
+       </template>
+   </lightning-card>
+</template>

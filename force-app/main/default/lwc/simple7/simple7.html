@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Calculate Result">
+        <div class="slds-m-left_x-small slds-m-right_x-small">
+        <lightning-input label="Maths" onchange={hadleChangeMathValue} value={Maths}>
+        </lightning-input>
+        <lightning-input label="Hindi" value={hindi} onchange={hadleChangeHinValue}></lightning-input>
+        <lightning-input label="English" value={Eng} onchange={hadleChangeEngValue}></lightning-input>
+        <div class="slds-m-top_medium">
+            <lightning-button  label="Calculate these:" onclick={handleBtnClick}></lightning-button>
+        <p class="slds-m-bottom_x-small slds-m-top_x-small"> <strong> Total Marks : {totalmarks}</strong></p>
+        <p class="slds-m-bottom_x-small"> <strong> Percentage : {roundoff}</strong></p>
+        <p class="slds-m-bottom_x-small"> <strong> Division: {division}</strong></p>
+    </div>
+</div>
+    </lightning-card>
+</template>
